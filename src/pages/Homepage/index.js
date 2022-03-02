@@ -1,5 +1,7 @@
+import "./index.css";
+
 const Homepage = () => {
-  return <div>homepage test</div>;
+  return <div className="homepage">homepage test</div>;
 };
 
 export default Homepage;

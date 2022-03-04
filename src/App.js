@@ -1,37 +1,35 @@
-import React from "react";
-import { Routes, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
 // Components
 import Homepage from "./pages/Homepage";
+import About from "./pages/About";
+import Catalogue from "./pages/Catalogue";
+import CheckOut from "./pages/CheckOut";
+import Header from "./components/Header";
 
 // Local
 import "./App.css";
 
 function App() {
+  const [selectedBook, setSelectedBook] = useState("");
+
   return (
     <div className="App">
-      <header>
-        <h1>The Book Repository</h1>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/about">About</Link>
-            </li>
-            <li>
-              <Link to="/catalogue">Catalogue</Link>
-            </li>
-          </ul>
-        </nav>
-      </header>
+      <Header />
 
-      <Routes>
-        <Route class="home" exact path="/" element={<Homepage />} />
-        <Route exact path="/about" element={<div>asdf</div>} />
-        <Route exact path="/catalogue" element={<div>asdf</div>} />
-      </Routes>
+      <div className="app-wrapper">
+        <Routes>
+          <Route className="home" exact path="/" element={<Homepage />} />
+          <Route exact path="/about" element={<About />} />
+          <Route
+            exact
+            path="/catalogue"
+            element={<Catalogue setSelectedBook={setSelectedBook} />}
+          />
+          <Route exact path="/checkout" element={<CheckOut selectedBook={selectedBook} />} />
+        </Routes>
+      </div>
     </div>
   );
 }

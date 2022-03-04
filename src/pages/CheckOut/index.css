@@ -1,0 +1,8 @@
+.checkoutForm label {
+  cursor: pointer;
+  user-select: none;
+}
+
+.checkoutForm label input {
+  cursor: pointer;
+}

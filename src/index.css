@@ -124,6 +124,12 @@ table {
   border-spacing: 0;
 }
 
+/* Custom Properties */
+:root {
+  --app-wrapper-max-width: 900px;
+  --app-wrapper-width: 98%;
+}
+
 /* Custom Reset */
 button {
   cursor: pointer;
